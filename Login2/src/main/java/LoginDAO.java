@@ -8,9 +8,9 @@ public class LoginDAO {
 
 	public LoginDAO() {
 		// Obtain a database connection
-		connection = YourDatabaseConnectionManager.getConnection();
+		Class.forName("com.mysql.jdbc.Driver");
+		connection = driverManager.getConnection(" "," ", " ");
 	}
-
 	public boolean validateUser(LoginData loginData) {
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
